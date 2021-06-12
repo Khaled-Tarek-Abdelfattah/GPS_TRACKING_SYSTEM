@@ -1,8 +1,10 @@
 Dependencies for Project 'first milestone', Target 'Target 1': (DO NOT MODIFY !)
 F (.\startup_TM4C123.s)(0x60C2191C)(--cpu Cortex-M4 --pd "__EVAL SETA 1" -g --apcs=interwork --pd "__MICROLIB SETA 1"-I C:\keil\ARM\RV31\INC-I C:\keil\ARM\CMSIS\Include-I C:\keil\ARM\Inc\TI\TM4C123--list .\startup_tm4c123.lst --xref -o .\startup_tm4c123.o --depend .\startup_tm4c123.d)
-F (.\phase1.c)(0x60C21EAD)(-c --cpu Cortex-M4 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I C:\keil\ARM\RV31\INC-I C:\keil\ARM\CMSIS\Include-I C:\keil\ARM\Inc\TI\TM4C123-DTM4C123GH6PM-o .\phase1.o --omf_browse .\phase1.crf --depend .\phase1.d)
+F (.\phase1.c)(0x60C53839)(-c --cpu Cortex-M4 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I C:\keil\ARM\RV31\INC-I C:\keil\ARM\CMSIS\Include-I C:\keil\ARM\Inc\TI\TM4C123-DTM4C123GH6PM-o .\phase1.o --omf_browse .\phase1.crf --depend .\phase1.d)
 I (C:\keil\ARM\ARMCC\include\math.h)(0x51C819B4)
 I (C:\keil\ARM\ARMCC\include\stdint.h)(0x51C819B4)
+I (C:\keil\ARM\ARMCC\include\string.h)(0x51C819B4)
+I (C:\keil\ARM\ARMCC\include\stdio.h)(0x51C819B4)
 I (UART.h)(0x60C09F8D)
 I (led.h)(0x60C21A1E)
 I (tm4c123gh6pm.h)(0x5C90156B)
