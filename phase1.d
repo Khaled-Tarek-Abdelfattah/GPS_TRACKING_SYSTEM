@@ -1,6 +1,7 @@
 .\phase1.o: phase1.c
 .\phase1.o: C:\keil\ARM\ARMCC\bin\..\include\math.h
 .\phase1.o: C:\keil\ARM\ARMCC\bin\..\include\stdint.h
+.\phase1.o: UART.h
 .\phase1.o: led.h
 .\phase1.o: tm4c123gh6pm.h
 .\phase1.o: distance.h

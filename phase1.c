@@ -5,6 +5,7 @@ void SystemInit()
 {
 	CPAC |= 0X00F00000;
 }
+#include "UART.h" 
 #include "led.h"
 #include "distance.h"
 #include "delay.h"
@@ -19,8 +20,11 @@ void SystemInit()
 
 int main(){
 		long double walked_dist;
-	  lcd_init();
-		init();
+	  
+		portf_init();
+		UART5_Init();//for GPS 
+		UART0_Init();//for PC
+		lcd_init();
 		LCD_Cmd(Function_set_8bit); /* Select 8-bit Mode of LCD */
 		SysTick_Wait_1ms(10);
 		LCD_Cmd(DisplayOn);  /* Enable Display and cursor blinking */
@@ -30,6 +34,7 @@ int main(){
 		walked_dist = distance(31.279940,31.277896,30.064716,30.064001);// walked distance in meters
 		if(walked_dist>=100){
 			lcd_tracking1(walked_dist);
+			//blue led
 			led_on();
 	}
 	}

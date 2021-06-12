@@ -3,7 +3,7 @@
 #include "tm4c123gh6pm.h"
 #include "stdint.h"
 
-void init();
+void portf_init();
 void led_on();
 
 #endif

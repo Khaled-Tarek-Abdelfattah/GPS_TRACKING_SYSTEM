@@ -1,4 +1,4 @@
---cpu Cortex-M4.fp
+--cpu Cortex-M4
 ".\startup_tm4c123.o"
 ".\phase1.o"
 ".\distance.o"
@@ -7,6 +7,7 @@
 ".\lcd_init.o"
 ".\lcd_tracking.o"
 ".\led.o"
---ro-base 0x00000000 --entry 0x00000000 --rw-base 0x20000000 --entry Reset_Handler --first __Vectors --strict --summary_stderr --info summarysizes --map --xref --callgraph --symbols
+".\uart.o"
+--library_type=microlib --ro-base 0x00000000 --entry 0x00000000 --rw-base 0x20000000 --entry Reset_Handler --first __Vectors --strict --summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
 --list ".\first milestone.map" -o ".\first milestone.axf"
