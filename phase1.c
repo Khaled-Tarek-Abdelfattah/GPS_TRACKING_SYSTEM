@@ -22,7 +22,65 @@ void SystemInit()
 
 float coords_obtained[200][2];
 uint16_t indx1=0;
-
+//converting a float to string function
+void reverse(char* str, int len)
+{
+    int i = 0, j = len - 1, temp;
+    while (i < j) {
+        temp = str[i];
+        str[i] = str[j];
+        str[j] = temp;
+        i++;
+        j--;
+    }
+}
+  
+// Converts a given integer x to string str[]. 
+// d is the number of digits required in the output. 
+// If d is more than the number of digits in x, 
+// then 0s are added at the beginning.
+int intToStr(int x, char str[], int d)
+{
+    int i = 0;
+    while (x) {
+        str[i++] = (x % 10) + '0';
+        x = x / 10;
+    }
+  
+    // If number of digits required is more, then
+    // add 0s at the beginning
+    while (i < d)
+        str[i++] = '0';
+  
+    reverse(str, i);
+    str[i] = '\0';
+    return i;
+}
+  
+// Converts a floating-point/double number to a string.
+void ftoa(float n, char* res, int afterpoint)
+{
+    // Extract integer part
+    int ipart = (int)n;
+  
+    // Extract floating part
+    float fpart = n - (float)ipart;
+  
+    // convert integer part to string
+    int i = intToStr(ipart, res, 0);
+  
+    // check for display option after point
+    if (afterpoint != 0) {
+        res[i] = '.'; // add dot
+  
+        // Get the value of fraction part upto given no.
+        // of points after dot. The third parameter 
+        // is needed to handle cases like 233.007
+        fpart = fpart * pow(10, afterpoint);
+  
+        intToStr((int)fpart, res + i + 1, afterpoint);
+    }
+}
 //read the char enterd from the pc keyboard through uart0
 char read_char()
 {
@@ -48,8 +106,10 @@ void read_coords()
 {
 	char all_data[90],parsed_values[12][50];//we have 12 values for our data 
 	char *ptr ;
+	char *lattt;
+	char *longgg;
 	const char delimiter[2]=",";
-	uint32_t deg = 0;
+	uint32_t deg = 0,t=0;
 	float lat = 0.0, longt = 0.0, mint = 0.0, parsed_lat = 0.0, parsed_longt = 0.0;
 	char a,b,c,d,e,f,g,h;
 	
@@ -90,8 +150,7 @@ void read_coords()
 								while(h != '*')//getting all useful values from gps until we reah the *
 								{
 									all_data[indx] = h; 
-									if(h == 'V')
-										break;
+									
 									//while((UART7_FR_R & 0x10)!=0);
 									h = UART5_Read();//(UART7_DR_R&0xFF);
 									indx++;
@@ -108,6 +167,7 @@ void read_coords()
 								//if the parsed_value[1] == A the data was read succefully if it was V then something went wrong
 								if(strcmp(parsed_values[1] , "A")==0)
 								{
+									
 									lat = atof(parsed_values[2]);//DDMM.MMMM
 									longt = atof(parsed_values[4]);
 									
@@ -123,6 +183,13 @@ void read_coords()
 									mint = mint/60;
 									parsed_longt = deg+ mint;
 									//save the whole coordinates obtained in the 2d coords_obtained[] array
+									/*ftoa(parsed_lat,lattt,10);
+									ftoa(parsed_lat,longgg,10);
+									do{
+										print_char(lattt[t]);
+										print_char(longgg[t]);
+										t++;
+									}while(t<13);*/
 									coords_obtained[indx1][0] = parsed_lat;
 									coords_obtained[indx1][1] = parsed_longt;
 									indx1++;
@@ -157,9 +224,12 @@ int main(){
 		LCD_Cmd(0x01); /* clear whatever is written on display */
 		while(1)
 		{
-			//read_coords();
-			out = UART5_Read();
-			print_char(out);
+			read_coords();
+			i++;
+			if(i>198)
+				break;
+		//	out = UART5_Read();
+		//	print_char(out);
 			//SysTick_Wait_1ms(1000);
 		/*	if((GPIO_PORTF_DATA_R & 0x11) == 0x10 || (GPIO_PORTF_DATA_R & 0x11) == 0x01) //when switch 1 or 2 are pressed we save the data
 		{
@@ -212,5 +282,10 @@ int main(){
 			lcd_tracking1(walked_dist);
 			//blue led
 			led_on();
-	}
+			}
+			else
+				{
+					GPIO_PORTF_DATA_R = RED;
+				}
+	
 	}

@@ -3,7 +3,7 @@
 <pre>
 <h1>µVision Build Log</h1>
 <h2>Project:</h2>
-C:\Users\mohamed\Desktop\GPS_TRACKING_SYSTEM\first milestone.uvproj
+D:\2nd term 2nd year electrical\GPS_TRACKING_SYSTEM-main\first milestone.uvproj
 Project File Date:  06/12/2021
 
 <h2>Output:</h2>
@@ -31,17 +31,21 @@ lcd_tracking.h(10): warning:  #1-D: last line of file ends without a newline
   #endif
 constants_phase1.h(23): warning:  #1-D: last line of file ends without a newline
   #endif
-phase1.c(208): warning:  #128-D: loop is not reachable
-                for( j=0;j<200;j+=2){
-phase1.c(147): warning:  #177-D: variable "word_count" was declared but never referenced
+phase1.c(109): warning:  #177-D: variable "lattt" was declared but never referenced
+        char *lattt;
+phase1.c(110): warning:  #177-D: variable "longgg" was declared but never referenced
+        char *longgg;
+phase1.c(112): warning:  #177-D: variable "t" was declared but never referenced
+        uint32_t deg = 0,t=0;
+phase1.c(213): warning:  #177-D: variable "out" was declared but never referenced
+                char out;
+phase1.c(214): warning:  #177-D: variable "word_count" was declared but never referenced
                 uint32_t word_count ;
-phase1.c(148): warning:  #177-D: variable "i" was declared but never referenced
-          int i=0,j=0;
-phase1.c: 14 warnings, 0 errors
+phase1.c: 16 warnings, 0 errors
 linking...
-Program Size: Code=4488 RO-data=716 RW-data=12 ZI-data=2116  
-".\first milestone.axf" - 0 Error(s), 14 Warning(s).
-Load "C:\\Users\\mohamed\\Desktop\\GPS_TRACKING_SYSTEM\\first milestone.axf" 
+Program Size: Code=11484 RO-data=1228 RW-data=12 ZI-data=2116  
+".\first milestone.axf" - 0 Error(s), 16 Warning(s).
+Load "D:\\2nd term 2nd year electrical\\GPS_TRACKING_SYSTEM-main\\first milestone.axf" 
 Connecting: Mode=JTAG, Speed=1000000Hz
 Erase Done.
 Programming Done.
@@ -49,3 +53,57 @@ Verify OK.
 </pre>
 </body>
 </html>
+oad "D:\\2nd term 2nd year electrical\\GPS_TRACKING_SYSTEM-main\\first milestone.axf" 
+Connecting: Mode=JTAG, Speed=1000000Hz
+Erase Done.
+Programming Done.
+Verify OK.
+arning:  #1-D: last line of file ends without a newline
+  #endif
+lcd_cmd_data.h(10): warning:  #1-D: last line of file ends without a newline
+  #endif
+lcd_cmd_data.c(20): warning:  #1-D: last line of file ends without a newline
+        }
+lcd_cmd_data.c: 4 warnings, 0 errors
+compiling lcd_init.c...
+lcd_init.h(6): warning:  #1295-D: Deprecated declaration lcd_init - give arg types
+  void lcd_init();
+lcd_init.h(8): warning:  #1-D: last line of file ends without a newline
+  #endif
+lcd_init.c(21): warning:  #1-D: last line of file ends without a newline
+        }
+lcd_init.c: 3 warnings, 0 errors
+compiling lcd_tracking.c...
+delay.h(6): warning:  #1295-D: Deprecated declaration SysTick_Init - give arg types
+  void SysTick_Init();
+delay.h(10): warning:  #1-D: last line of file ends without a newline
+  #endif
+lcd_cmd_data.h(10): warning:  #1-D: last line of file ends without a newline
+  #endif
+lcd_tracking.h(10): warning:  #1-D: last line of file ends without a newline
+  #endif
+lcd_tracking.c(16): warning:  #1-D: last line of file ends without a newline
+  }
+lcd_tracking.c: 5 warnings, 0 errors
+compiling led.c...
+led.h(6): warning:  #1295-D: Deprecated declaration portf_init - give arg types
+  void portf_init();
+led.h(7): warning:  #1295-D: Deprecated declaration led_on - give arg types
+  void led_on();
+led.h(9): warning:  #1-D: last line of file ends without a newline
+  #endif
+led.c(23): warning:  #1-D: last line of file ends without a newline
+  }
+led.c: 4 warnings, 0 errors
+compiling UART.c...
+UART.c(61): warning:  #1-D: last line of file ends without a newline
+  }
+UART.c: 1 warning, 0 errors
+linking...
+Program Size: Code=4492 RO-data=716 RW-data=12 ZI-data=2116  
+".\first milestone.axf" - 0 Error(s), 36 Warning(s).
+Load "D:\\2nd term 2nd year electrical\\GPS_TRACKING_SYSTEM-main\\first milestone.axf" 
+Connecting: Mode=JTAG, Speed=1000000Hz
+Erase Done.
+Programming Done.
+Verify OK.
