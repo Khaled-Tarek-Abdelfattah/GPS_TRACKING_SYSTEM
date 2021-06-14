@@ -183,13 +183,15 @@ void read_coords()
 									mint = mint/60;
 									parsed_longt = deg+ mint;
 									//save the whole coordinates obtained in the 2d coords_obtained[] array
-									/*ftoa(parsed_lat,lattt,10);
+									ftoa(parsed_lat,lattt,10);
 									ftoa(parsed_lat,longgg,10);
 									do{
 										print_char(lattt[t]);
+										print_string("   ");
 										print_char(longgg[t]);
+                    print_string("\n");
 										t++;
-									}while(t<13);*/
+									}while(t<13);
 									coords_obtained[indx1][0] = parsed_lat;
 									coords_obtained[indx1][1] = parsed_longt;
 									indx1++;
@@ -208,7 +210,8 @@ void read_coords()
 }
 
 int main(){
-		long double walked_dist;
+	FILE 	*finout;
+		long double walked_dist=0;
 		volatile unsigned long delay;
 		char out;
 		uint32_t word_count ;
@@ -226,7 +229,7 @@ int main(){
 		{
 			read_coords();
 			i++;
-			if(i>198)
+			if(indx1>120)    
 				break;
 		//	out = UART5_Read();
 		//	print_char(out);
@@ -275,10 +278,12 @@ int main(){
 			break;
 		}*/
 		}
-		for( j=0;j<200;j+=2){
-			walked_dist = distance(coords_obtained[j][1],coords_obtained[j+1][1],coords_obtained[j][0],coords_obtained[j+1][0]);// walked distance in meters
+
+		for( j=0;j<5;j+=2){
+			walked_dist += distance(coords_obtained[j][1],coords_obtained[j+1][1],coords_obtained[j][0],coords_obtained[j+1][0]);// walked distance in meters
 		}
-			if(walked_dist>=100){
+		lcd_tracking1(walked_dist);
+		if(walked_dist>=100){
 			lcd_tracking1(walked_dist);
 			//blue led
 			led_on();

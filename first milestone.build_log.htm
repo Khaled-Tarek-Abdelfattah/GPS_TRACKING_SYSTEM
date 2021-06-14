@@ -3,18 +3,22 @@
 <pre>
 <h1>µVision Build Log</h1>
 <h2>Project:</h2>
-D:\2nd term 2nd year electrical\GPS_TRACKING_SYSTEM-main\first milestone.uvproj
-Project File Date:  06/12/2021
+C:\GPS_TRACKING_SYSTEM-main\first milestone.uvproj
+Project File Date:  06/13/2021
 
 <h2>Output:</h2>
 Build target 'Target 1'
-compiling phase1.c...
-led.h(6): warning:  #1295-D: Deprecated declaration portf_init - give arg types
-  void portf_init();
-led.h(7): warning:  #1295-D: Deprecated declaration led_on - give arg types
-  void led_on();
-led.h(9): warning:  #1-D: last line of file ends without a newline
-  #endif
+linking...
+Program Size: Code=11580 RO-data=1228 RW-data=12 ZI-data=2116  
+".\first milestone.axf" - 0 Error(s), 0 Warning(s).
+Load "C:\\GPS_TRACKING_SYSTEM-main\\first milestone.axf" 
+Connecting: Mode=JTAG, Speed=1000000Hz
+Erase Done.
+Programming Done.
+Verify OK.
+</pre>
+</body>
+</html>
 distance.h(9): warning:  #1-D: last line of file ends without a newline
   #endif
 delay.h(6): warning:  #1295-D: Deprecated declaration SysTick_Init - give arg types
@@ -31,34 +35,38 @@ lcd_tracking.h(10): warning:  #1-D: last line of file ends without a newline
   #endif
 constants_phase1.h(23): warning:  #1-D: last line of file ends without a newline
   #endif
-phase1.c(109): warning:  #177-D: variable "lattt" was declared but never referenced
-        char *lattt;
-phase1.c(110): warning:  #177-D: variable "longgg" was declared but never referenced
-        char *longgg;
-phase1.c(112): warning:  #177-D: variable "t" was declared but never referenced
-        uint32_t deg = 0,t=0;
-phase1.c(213): warning:  #177-D: variable "out" was declared but never referenced
+phase1.c(213): warning:  #177-D: variable "finout" was declared but never referenced
+        FILE    *finout;
+phase1.c(216): warning:  #177-D: variable "out" was declared but never referenced
                 char out;
-phase1.c(214): warning:  #177-D: variable "word_count" was declared but never referenced
+phase1.c(217): warning:  #177-D: variable "word_count" was declared but never referenced
                 uint32_t word_count ;
-phase1.c: 16 warnings, 0 errors
+phase1.c: 14 warnings, 0 errors
 linking...
-Program Size: Code=11484 RO-data=1228 RW-data=12 ZI-data=2116  
-".\first milestone.axf" - 0 Error(s), 16 Warning(s).
-Load "D:\\2nd term 2nd year electrical\\GPS_TRACKING_SYSTEM-main\\first milestone.axf" 
+Program Size: Code=11580 RO-data=1228 RW-data=12 ZI-data=2116  
+".\first milestone.axf" - 0 Error(s), 14 Warning(s).
+Load "C:\\GPS_TRACKING_SYSTEM-main\\first milestone.axf" 
 Connecting: Mode=JTAG, Speed=1000000Hz
 Erase Done.
 Programming Done.
 Verify OK.
-</pre>
-</body>
-</html>
-oad "D:\\2nd term 2nd year electrical\\GPS_TRACKING_SYSTEM-main\\first milestone.axf" 
-Connecting: Mode=JTAG, Speed=1000000Hz
-Erase Done.
-Programming Done.
-Verify OK.
-arning:  #1-D: last line of file ends without a newline
+distance.h(9): warning:  #1-D: last line of file ends without a newline
+  #endif
+distance.c(29): warning:  #1-D: last line of file ends without a newline
+        }
+distance.c: 2 warnings, 0 errors
+compiling delay.c...
+delay.h(6): warning:  #1295-D: Deprecated declaration SysTick_Init - give arg types
+  void SysTick_Init();
+delay.h(10): warning:  #1-D: last line of file ends without a newline
+  #endif
+delay.c(22): warning:  #1-D: last line of file ends without a newline
+  }// Call this routine to wait for delay*1ms
+delay.c: 3 warnings, 0 errors
+compiling lcd_cmd_data.c...
+delay.h(6): warning:  #1295-D: Deprecated declaration SysTick_Init - give arg types
+  void SysTick_Init();
+delay.h(10): warning:  #1-D: last line of file ends without a newline
   #endif
 lcd_cmd_data.h(10): warning:  #1-D: last line of file ends without a newline
   #endif
@@ -100,9 +108,9 @@ UART.c(61): warning:  #1-D: last line of file ends without a newline
   }
 UART.c: 1 warning, 0 errors
 linking...
-Program Size: Code=4492 RO-data=716 RW-data=12 ZI-data=2116  
-".\first milestone.axf" - 0 Error(s), 36 Warning(s).
-Load "D:\\2nd term 2nd year electrical\\GPS_TRACKING_SYSTEM-main\\first milestone.axf" 
+Program Size: Code=11484 RO-data=1228 RW-data=12 ZI-data=2116  
+".\first milestone.axf" - 0 Error(s), 38 Warning(s).
+Load "C:\\GPS_TRACKING_SYSTEM-main\\first milestone.axf" 
 Connecting: Mode=JTAG, Speed=1000000Hz
 Erase Done.
 Programming Done.
